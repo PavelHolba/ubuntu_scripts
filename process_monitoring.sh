@@ -12,7 +12,7 @@ check_new_processes() {
         process=$(echo "$line" | awk '{print $11}')
 
         # Ignore processes owned by root, systemd+, message+, polkitd, and syslog
-        if [[ "$user" != "root" && "$user" != "systemd+" && "$user" != "message+" && "$user" != "polkitd" && "$user" != "syslog" ]]; then
+        if [[ "$process" != "ps" && "$user" != "root" && "$user" != "systemd+" && "$user" != "message+" && "$user" != "polkitd" && "$user" != "syslog" ]]; then
             if ! echo "$current_processes" | grep -q "$line"; then
                 echo "New Process Detected: $line"
             fi
