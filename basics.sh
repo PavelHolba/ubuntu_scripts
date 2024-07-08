@@ -23,6 +23,10 @@ sudo apt-get upgrade -y
 # Install essential network utilities
 sudo apt-get install -y net-tools
 
+# Fix permissions to ssh key
+chmod 600 .ssh/id_rsa
+chmod 644 .ssh/id_rsa.pub
+
 
 # Print a message indicating the completion of the provisioning routine
 echo
