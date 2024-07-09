@@ -23,6 +23,9 @@ sudo apt-get upgrade -y
 # Install essential network utilities
 sudo apt-get install -y net-tools
 
+# Install unpacking tool
+sudo apt install bzip2
+
 # Fix permissions to ssh key
 chmod 600 .ssh/id_rsa
 chmod 644 .ssh/id_rsa.pub

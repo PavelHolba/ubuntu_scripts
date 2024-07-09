@@ -7,6 +7,10 @@ echo
 # we first need to repair /etc/apt/sources.list, uncomment all deb-src lines
 sudo sed -i -e "s/^# deb/deb" /etc/apt/sources.list
 
+# install necessary tools
+sudo apt install gcc
+sudo apt install make
+
 # install necessary dependecies for lmod
 sudo apt update
 sudo apt -y build-dep lmod
