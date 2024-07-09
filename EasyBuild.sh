@@ -17,8 +17,8 @@ python3.10 -m pip install --ignore-installed --prefix $EB_TMPDIR easybuild
 # set PATHS and instal easybuild using easybuild
 export EB_TMPDIR=/tmp/$USER/eb_tmp
 export PATH=$EB_TMPDIR/local/bin:$PATH
-export PYTHONPATH=$EB_TMPDIR/local/lib/python3.6/dist-packages:$PYTHONPATH
-export EB_PYTHON=python3.6
+export PYTHONPATH=$EB_TMPDIR/lib*/python3.10/site-packages:$PYTHONPATH
+export EB_PYTHON=python3.10
 eb --install-latest-eb-release --prefix $HOME/easybuild
 
 echo

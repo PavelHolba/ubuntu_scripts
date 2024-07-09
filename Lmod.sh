@@ -9,13 +9,16 @@ echo
 
 # we first need to repair /etc/apt/sources.list, uncomment all deb-src lines
 sudo sed -i -e "s/^# deb/deb/g" /etc/apt/sources.list
+# 24.04 ubuntu changed the location and format, so we may need to run this
+sudo sed -i 's/^Types: deb$/Types: deb deb-src/' /etc/apt/sources.list.d/ubuntu.sources
+
+sudo apt update
 
 # install necessary tools
 sudo apt install gcc
 sudo apt install make
 
 # install necessary dependecies for lmod
-sudo apt update
 sudo apt -y build-dep lmod
 lua_ver=$(which lua | xargs realpath -e | xargs basename)
 sudo apt -y install lib${lua_ver}-dev tcl-dev
