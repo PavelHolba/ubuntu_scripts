@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Exit immediately if any command fails
+set -e
+
 echo
 echo "## Installing Lmod ##"
 echo
