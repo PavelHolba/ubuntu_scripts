@@ -5,7 +5,7 @@ echo "## Installing Lmod ##"
 echo
 
 # we first need to repair /etc/apt/sources.list, uncomment all deb-src lines
-sudo sed -i -e "s/^# deb/deb" /etc/apt/sources.list
+sudo sed -i -e "s/^# deb/deb/g" /etc/apt/sources.list
 
 # install necessary tools
 sudo apt install gcc
