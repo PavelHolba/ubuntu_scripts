@@ -10,8 +10,7 @@ echo
 sudo apt update
 
 # install necessary tools
-sudo apt install gcc
-sudo apt install make
+sudo apt install -y gcc make
 
 # install necessary dependecies for lmod
 sudo apt -y build-dep lmod
