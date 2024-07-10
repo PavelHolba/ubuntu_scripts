@@ -14,7 +14,10 @@ echo
 # we first need to repair /etc/apt/sources.list, uncomment all deb-src lines
 sudo sed -i -e 's/^# deb/deb/g' /etc/apt/sources.list
 # some 24.04 Ubuntu have different location and format, so we may need to run this
-sudo sed -i 's/^Types: deb$/Types: deb deb-src/' /etc/apt/sources.list.d/ubuntu.sources
+CONFIG_FILE="/etc/apt/sources.list.d/ubuntu.sources"
+if [ -f "$CONFIG_FILE" ]; then
+    sudo sed -i 's/^Types: deb$/Types: deb deb-src/' $CONFIG_FILE
+fi
 
 # Update package lists
 sudo apt-get update
