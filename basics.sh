@@ -23,7 +23,7 @@ fi
 sudo apt-get update
 
 # Perform distribution upgrade for handling changes in dependencies
-sudo apt-get dist-upgrade -y
+sudo NEEDRESTART_MODE=a apt-get dist-upgrade -y
 
 # Upgrade installed packages
 sudo apt-get upgrade -y
