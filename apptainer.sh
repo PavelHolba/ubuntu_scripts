@@ -51,4 +51,13 @@ echo -e "\n## building of apptainer v${APPTAINERVERSION} - starting ##\n"
 cd $(/bin/pwd)/builddir
 make
 sudo make install
+cd
 echo -e "\n## building of apptainer v${APPTAINERVERSION} - done ##\n"
+
+echo -e "\n## compiling dependent FUSE-based packages - starting ##\n"
+sudo apt-get install -y autoconf automake libtool pkg-config libfuse3-dev zlib1g-dev
+cd apptainer
+./scripts/download-dependencies
+./scripts/compile-dependencies
+sudo ./scripts/install-dependencies
+echo -e "\n## compiling dependent FUSE-based packages - done ##\n"
