@@ -35,7 +35,7 @@ echo -e "\n## installation of go${GOVERSION}.${OS}-${ARCH} - done ##\n"
 
 echo -e "\n## add /usr/local/go/bin to the PATH - starting ##\n"
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
-source ~/.bashrc #apptainer.sh: 29: source: not found ???
+source ~/.bashrc #apptainer.sh: 38: source: not found - run bash apptainer.sh instead of sh apptainer.sh
 echo -e "\n## add /usr/local/go/bin to the PATH - done ##\n"
 
 export APPTAINERVERSION=1.3.3
